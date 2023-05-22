@@ -34,7 +34,8 @@ body {
 	text-transform: uppercase;
 	font-weight: 700;
 	padding-bottom: 20px;
-	text-align: center;
+	display: flex;
+	align-items: center;
 
 	transition: background .2s linear;
 }
