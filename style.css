@@ -43,6 +43,25 @@ body {
 	background: lightgreen;
 }
 
+.tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tags a {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 10px;
+  background-color: #ccc;
+  color: #fff;
+  text-decoration: none;
+}
+
+.tags a:hover {
+  background-color: #333;
+} 
+
 
 /*
 var(--tg-theme-bg-color)
