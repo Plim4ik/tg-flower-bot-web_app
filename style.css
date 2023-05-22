@@ -22,8 +22,6 @@ body {
 
 .item {
 	text-align: center;
-	padding-bottom: 20px;
-	padding-top: 20px;
 }
 
 .btn {
@@ -35,6 +33,7 @@ body {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
+	padding-bottom: 20px;
 
 	transition: background .2s linear;
 }
