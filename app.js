@@ -1,17 +1,19 @@
-let cart = [];
-
-btn1.addEventListener("click", function () {
-    addToCart({ name: 'Flower 1', price: 1200 });
-    tg.MainButton.setText("Вы выбрали товар 1!");
-    tg.MainButton.show();
-});
-
-// Аналогично для остальных кнопок...
-
-function addToCart(item) {
-    cart.push(item);
+// Обновляем видимость кнопки корзины
+function updateCartButton() {
+  const cartBtn = document.getElementById('cartBtn');
+  cartBtn.style.display = cart.length > 0 ? 'block' : 'none';
 }
 
-Telegram.WebApp.onEvent("mainButtonClicked", function () {
-    tg.sendData(JSON.stringify(cart));
+// Функция для добавления товара в корзину
+function addToCart(itemName, itemPrice) {
+  cart.push({ name: itemName, price: itemPrice });
+  updateCartButton();
+}
+
+// Обработчик события для кнопки корзины
+document.getElementById('cartBtn').addEventListener('click', () => {
+  // Сохраняем корзину в localStorage для доступа на странице корзины
+  localStorage.setItem('cart', JSON.stringify(cart));
+  // Переход на страницу корзины
+  window.location.href = 'cart.html';
 });
