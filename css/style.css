@@ -93,19 +93,48 @@ body {
     transition: background .2s linear;  /* Добавляем анимацию изменения фона */
 }
 
-/* Стили для кнопки корзины при наведении */
-#go-to-cart:hover {
-    background-color: lightgreen;  /* Изменяем цвет фона */
+.product {
+    width: 200px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: center;
 }
 
-.quantity-container {
+.add-to-cart {
+    padding: 10px 20px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.item-counter {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    margin-top: 10px;
 }
 
-.quantity-btn {
-    margin: 0 10px;
+.item-counter button {
+    padding: 5px 10px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.item-counter button:hover {
+    background-color: #1e7e34;
 }
 
 
