@@ -98,4 +98,14 @@ body {
     background-color: lightgreen;  /* Изменяем цвет фона */
 }
 
+.quantity-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity-btn {
+    margin: 0 10px;
+}
+
 
