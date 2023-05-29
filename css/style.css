@@ -1,144 +1,223 @@
 /* Основные стили для всего тела документа */
 body {
-	margin: 0;  /* Удаляем внешние отступы */
-	padding: 0;  /* Удаляем внутренние отступы */
-	font-size: 18px;  /* Устанавливаем размер шрифта */
-	color: var(--tg-theme-text-color);  /* Устанавливаем цвет текста */
-	background-color: var(--tg-theme-bg-color);  /* Устанавливаем цвет фона */
+  margin: 0;
+  /* Удаляем внешние отступы */
+  padding: 0;
+  /* Удаляем внутренние отступы */
+  font-size: 18px;
+  /* Устанавливаем размер шрифта */
+  color: var(--tg-theme-text-color);
+  /* Устанавливаем цвет текста */
+  background-color: var(--tg-theme-bg-color);
+  /* Устанавливаем цвет фона */
 }
 
 /* Стили для контейнера */
 .container {
-	max-width: 390px;  /* Устанавливаем максимальную ширину контейнера */
+  max-width: 390px;
+  /* Устанавливаем максимальную ширину контейнера */
 }
 
 /* Стили для элемента с классом 'inner' */
 .inner {
-	display: grid;  /* Устанавливаем тип отображения на grid */
-	grid-template-columns: 1fr 1fr;  /* Создаем две колонки одинаковой ширины */
-	grid-template-rows: 230px 230px 230px;  /* Создаем три строки высотой в 230px каждая */
+  display: grid;
+  /* Устанавливаем тип отображения на grid */
+  grid-template-columns: 1fr 1fr;
+  /* Создаем две колонки одинаковой ширины */
+  grid-template-rows: 230px 230px 230px;
+  /* Создаем три строки высотой в 230px каждая */
 }
 
 /* Стили для изображений */
 .img {
-	width: 150px;  /* Устанавливаем ширину изображений */
+  width: 150px;
+  /* Устанавливаем ширину изображений */
 }
 
 /* Стили для элемента с классом 'item' */
 .item {
-	text-align: center;  /* Центрируем текст */
+  text-align: center;
+  /* Центрируем текст */
 }
 
 /* Стили для кнопок */
 .btn {
-	display: inline-block;  /* Устанавливаем тип отображения на inline-block */
-	padding: 5px 20px;  /* Устанавливаем внутренние отступы */
-	border: none;  /* Удаляем рамку */
-	background: rgb(248, 168, 24);  /* Устанавливаем цвет фона */
-	border-radius: 10px;  /* Устанавливаем радиус скругления углов */
-	color: #fff;  /* Устанавливаем цвет текста */
-	text-transform: uppercase;  /* Преобразуем текст в верхний регистр */
-	font-weight: 700;  /* Устанавливаем жирность шрифта */
-	align-items: center;  /* Центрируем текст по вертикали */
+  display: inline-block;
+  /* Устанавливаем тип отображения на inline-block */
+  padding: 5px 20px;
+  /* Устанавливаем внутренние отступы */
+  border: none;
+  /* Удаляем рамку */
+  background: rgb(248, 168, 24);
+  /* Устанавливаем цвет фона */
+  border-radius: 10px;
+  /* Устанавливаем радиус скругления углов */
+  color: #fff;
+  /* Устанавливаем цвет текста */
+  text-transform: uppercase;
+  /* Преобразуем текст в верхний регистр */
+  font-weight: 700;
+  /* Устанавливаем жирность шрифта */
+  align-items: center;
+  /* Центрируем текст по вертикали */
 
-	transition: background .2s linear;  /* Добавляем анимацию изменения фона */
+  transition: background .2s linear;
+  /* Добавляем анимацию изменения фона */
 }
 
 /* Стили для кнопок при наведении */
 .btn:hover {
-	background: lightgreen;  /* Изменяем цвет фона */
+  background: lightgreen;
+  /* Изменяем цвет фона */
 }
 
 /* Стили для тегов */
 .tags {
-  display: flex;  /* Устанавливаем тип отображения на flex */
-  justify-content: center;  /* Центрируем теги по горизонтали */
-  align-items: center;  /* Центрируем теги по вертикали */
+  display: flex;
+  /* Устанавливаем тип отображения на flex */
+  justify-content: center;
+  /* Центрируем теги по горизонтали */
+  align-items: center;
+  /* Центрируем теги по вертикали */
 }
 
 /* Стили для ссылок тегов */
 .tags a {
-  display: inline-block;  /* Устанавливаем тип отображения на inline-block */
-  padding: 10px;  /* Устанавливаем внутренние отступы */
-  margin: 0 10px;  /* Устанавливаем внешние отступы */
-  background-color: #ccc;  /* Устанавливаем цвет фона */
-  color: #fff;  /* Устанавливаем цвет текста */
-  text-decoration: none;  /* Удаляем подчеркивание у ссылок */
+  display: inline-block;
+  /* Устанавливаем тип отображения на inline-block */
+  padding: 10px;
+  /* Устанавливаем внутренние отступы */
+  margin: 0 10px;
+  /* Устанавливаем внешние отступы */
+  background-color: #ccc;
+  /* Устанавливаем цвет фона */
+  color: #fff;
+  /* Устанавливаем цвет текста */
+  text-decoration: none;
+  /* Удаляем подчеркивание у ссылок */
 }
 
 /* Стили для ссылок тегов при наведении */
 .tags a:hover {
-  background-color: #333;  /* Изменяем цвет фона */
-} 
+  background-color: #333;
+  /* Изменяем цвет фона */
+}
 
 /* Стили для активной кнопки фильтра */
 .filter-btn.active {
-  background-color: lightgreen;  /* Изменяем цвет фона */
+  background-color: lightgreen;
+  /* Изменяем цвет фона */
 }
 
 /* Стили для кнопки корзины */
 #go-to-cart {
-    position: fixed;  /* Закрепляем кнопку */
-    bottom: 20px;  /* Устанавливаем отступ от нижнего края */
-    left: 50%;  /* Устанавливаем отступ от левого края в 50% ширины экрана */
-    transform: translateX(-50%);  /* Смещаем кнопку на половину ее ширины влево, чтобы центрировать ее по горизонтали */
-    display: none;  /* По умолчанию кнопка не отображается */
-    padding: 10px 20px;  /* Устанавливаем внутренние отступы */
-    border: none;  /* Удаляем рамку */
-    background-color: rgb(248, 168, 24);  /* Устанавливаем цвет фона */
-    border-radius: 10px;  /* Устанавливаем радиус скругления углов */
-    color: #fff;  /* Устанавливаем цвет текста */
-    text-transform: uppercase;  /* Преобразуем текст в верхний регистр */
-    font-weight: 700;  /* Устанавливаем жирность шрифта */
-    transition: background .2s linear;  /* Добавляем анимацию изменения фона */
+  position: fixed;
+  /* Закрепляем кнопку */
+  bottom: 20px;
+  /* Устанавливаем отступ от нижнего края */
+  left: 50%;
+  /* Устанавливаем отступ от левого края в 50% ширины экрана */
+  transform: translateX(-50%);
+  /* Смещаем кнопку на половину ее ширины влево, чтобы центрировать ее по горизонтали */
+  /* По умолчанию кнопка не отображается */
+  padding: 10px 20px;
+  /* Устанавливаем внутренние отступы */
+  border: none;
+  /* Удаляем рамку */
+  background-color: rgb(248, 168, 24);
+  /* Устанавливаем цвет фона */
+  border-radius: 10px;
+  /* Устанавливаем радиус скругления углов */
+  color: #fff;
+  /* Устанавливаем цвет текста */
+  text-transform: uppercase;
+  /* Преобразуем текст в верхний регистр */
+  font-weight: 700;
+  /* Устанавливаем жирность шрифта */
+  transition: background .2s linear;
+  cursor: pointer;
+  text-decoration: none;
+  /* Добавляем анимацию изменения фона */
 }
 
 .product {
-    width: 200px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin: 20px auto;
-    text-align: center;
+  width: 200px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 20px auto;
+  text-align: center;
 }
 
 .add-to-cart {
-	display: inline-block;  /* Устанавливаем тип отображения на inline-block */
-	padding: 5px 20px;  /* Устанавливаем внутренние отступы */
-	border: none;  /* Удаляем рамку */
-	background: rgb(248, 168, 24);  /* Устанавливаем цвет фона */
-	border-radius: 10px;  /* Устанавливаем радиус скругления углов */
-	color: #fff;  /* Устанавливаем цвет текста */
-	text-transform: uppercase;  /* Преобразуем текст в верхний регистр */
-	font-weight: 700;  /* Устанавливаем жирность шрифта */
-	align-items: center;  /* Центрируем текст по вертикали */
+  display: inline-block;
+  /* Устанавливаем тип отображения на inline-block */
+  padding: 5px 20px;
+  /* Устанавливаем внутренние отступы */
+  border: none;
+  /* Удаляем рамку */
+  background: rgb(248, 168, 24);
+  /* Устанавливаем цвет фона */
+  border-radius: 10px;
+  /* Устанавливаем радиус скругления углов */
+  color: #fff;
+  /* Устанавливаем цвет текста */
+  text-transform: uppercase;
+  /* Преобразуем текст в верхний регистр */
+  font-weight: 700;
+  /* Устанавливаем жирность шрифта */
+  align-items: center;
+  /* Центрируем текст по вертикали */
 
-	transition: background .2s linear; 
+  transition: background .2s linear;
 }
 
 .add-to-cart:hover {
-	background: lightgreen;
+  background: lightgreen;
 }
 
 .item-counter {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .item-counter button {
-    padding: 5px 10px;
-    color: white;
-    background-color: rgb(248, 168, 24);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 5px 10px;
+  color: white;
+  background-color: rgb(248, 168, 24);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .item-counter button:hover {
-    background-color: #1e7e34;
+  background-color: #1e7e34;
 }
 
 
+/* Cart */
+
+#cart-items .cart-product {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  justify-content: space-between;
+}
+
+#cart-items .cart-product img {
+  width: 80px;
+}
+
+#cart-items .cart-product .product-title {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#cart-items .cart-product .product-title h4,
+#cart-items .cart-product .product-title p {
+  margin: 5px 0;
+}

@@ -2,12 +2,12 @@
 const filterButtons = document.querySelectorAll('.filter-btn');
 
 // Получаем все блоки item
-const items = document.querySelectorAll('.item');
+const itemsDiv = document.querySelectorAll('.item');
 
 // Добавляем обработчик событий для каждой кнопки фильтра
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const tag = button.dataset.tag; // Получаем значение тега из data-атрибута кнопки
+    const tag = button.dataset.tag; // Получаем значение тега из data-атрибута кнопки 
 
     // Проверяем, активна ли уже кнопка
     const isActive = button.classList.contains('active');
@@ -19,7 +19,7 @@ filterButtons.forEach(button => {
 
     // Показываем все товары при повторном нажатии на активный тег
     if (isActive) {
-      items.forEach(item => {
+      itemsDiv.forEach(item => {
         item.style.display = 'block'; // Отображаем блок item
       });
     } else {
@@ -27,7 +27,7 @@ filterButtons.forEach(button => {
       button.classList.add('active');
 
       // Скрываем все блоки item
-      items.forEach(item => {
+      itemsDiv.forEach(item => {
         item.style.display = 'none'; // Скрываем блок item
       });
 
