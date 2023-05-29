@@ -29,3 +29,14 @@ function updateCartButton() {
 
 // Обновляем состояние кнопки корзины при загрузке страницы
 updateCartButton();
+
+// Когда страница загрузится, мы хотим добавить обработчик событий click к кнопке корзины
+window.onload = function() {
+    const cartButton = document.getElementById('cartButton');
+    
+    cartButton.addEventListener('click', function() {
+        // Эта функция будет вызвана при нажатии на кнопку корзины
+        // здесь мы просто перенаправляем пользователя на страницу корзины
+        window.location.href = 'pages/cart.html'; 
+    });
+};
