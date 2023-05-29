@@ -1,19 +1,31 @@
-// Обновляем видимость кнопки корзины
-function updateCartButton() {
-  const cartBtn = document.getElementById('cartBtn');
-  cartBtn.style.display = cart.length > 0 ? 'block' : 'none';
-}
+// Первым делом получаем все кнопки "Add" и кнопку корзины
+let addButtons = document.querySelectorAll('.btn');
+let cartButton = document.getElementById('cartButton');
 
-// Функция для добавления товара в корзину
-function addToCart(itemName, itemPrice) {
-  cart.push({ name: itemName, price: itemPrice });
-  updateCartButton();
-}
+// Затем проходимся по всем кнопкам "Add" и добавляем обработчики событий
+addButtons.forEach((button) => {
+  button.addEventListener('click', function () {
+    // Получаем информацию о товаре
+    let item = button.parentElement;
+    let itemName = item.querySelector('span').textContent;
 
-// Обработчик события для кнопки корзины
-document.getElementById('cartBtn').addEventListener('click', () => {
-  // Сохраняем корзину в localStorage для доступа на странице корзины
-  localStorage.setItem('cart', JSON.stringify(cart));
-  // Переход на страницу корзины
-  window.location.href = 'cart.html';
+    // Сохраняем информацию о товаре в localStorage
+    localStorage.setItem(itemName, itemName);
+
+    // Обновляем состояние кнопки корзины
+    updateCartButton();
+  });
 });
+
+// Функция для обновления состояния кнопки корзины
+function updateCartButton() {
+  let items = Object.keys(localStorage);
+  if (items.length > 0) {
+    cartButton.style.display = 'block';
+  } else {
+    cartButton.style.display = 'none';
+  }
+}
+
+// Обновляем состояние кнопки корзины при загрузке страницы
+updateCartButton();

@@ -1,26 +1,12 @@
-// Получаем корзину из localStorage
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+// Получаем контейнер, в котором будут отображаться товары
+let cartContainer = document.getElementById('cartContainer');
 
-// Функция для обновления отображения корзины
-function updateCartDisplay() {
-  const cartItemsDiv = document.getElementById('cartItems');
-  cartItemsDiv.innerHTML = '';  // Очищаем текущее содержимое
-  
-  cart.forEach((item, index) => {
-    cartItemsDiv.innerHTML += `
-      <div class="cart-item">
-        <p>${item.name} - ${item.price} RUB</p>
-        <button class="button" onclick="removeFromCart(${index})">Удалить</button>
-      </div>
-    `;
-  });
-}
+// Получаем все товары из localStorage
+let items = Object.keys(localStorage);
 
-// Функция для удаления товара из корзины
-function removeFromCart(index) {
-  cart.splice(index, 1);
-  updateCartDisplay();
-}
-
-// Обновляем отображение корзины при загрузке страницы
-updateCartDisplay();
+// Для каждого товара создаем HTML-элемент и добавляем его в контейнер
+items.forEach((item) => {
+  let itemElement = document.createElement('div');
+  itemElement.textContent = item;
+  cartContainer.appendChild(itemElement);
+});
