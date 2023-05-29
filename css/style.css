@@ -103,17 +103,21 @@ body {
 }
 
 .add-to-cart {
-    padding: 10px 20px;
-    color: white;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+	display: inline-block;  /* Устанавливаем тип отображения на inline-block */
+	padding: 5px 20px;  /* Устанавливаем внутренние отступы */
+	border: none;  /* Удаляем рамку */
+	background: rgb(248, 168, 24);  /* Устанавливаем цвет фона */
+	border-radius: 10px;  /* Устанавливаем радиус скругления углов */
+	color: #fff;  /* Устанавливаем цвет текста */
+	text-transform: uppercase;  /* Преобразуем текст в верхний регистр */
+	font-weight: 700;  /* Устанавливаем жирность шрифта */
+	align-items: center;  /* Центрируем текст по вертикали */
+
+	transition: background .2s linear; 
 }
 
 .add-to-cart:hover {
-    background-color: #0056b3;
+	background: lightgreen;
 }
 
 .item-counter {
@@ -126,7 +130,7 @@ body {
 .item-counter button {
     padding: 5px 10px;
     color: white;
-    background-color: #28a745;
+    background-color: rgb(248, 168, 24);
     border: none;
     border-radius: 5px;
     cursor: pointer;
