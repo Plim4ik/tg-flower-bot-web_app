@@ -1,28 +1,106 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Цветочный магазин</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Цветочный магазин</title>
 </head>
 <body>
-    <div class="product" id="product1">
-        <img src="images/1.png" alt="Product Image">
-        <h2>Product Name</h2>
-        <p>Product Price</p>
-        <button class="add-to-cart">Add</button>
-        <div class="item-counter" style="display: none;">
-            <button class="subtract">-</button>
-            <span class="quantity">0</span>
-            <button class="add">+</button>
+	
+<button class="filter-btn" data-tag="tag1">Тег 1</button>
+<button class="filter-btn" data-tag="tag2">Тег 2</button>
+<button class="filter-btn" data-tag="tag3">Тег 3</button>
+<button class="filter-btn" data-tag="tag3">Тег 4</button>
+<button class="filter-btn" data-tag="tag3">Тег 5</button>
+<button class="filter-btn" data-tag="tag3">Тег 6</button>
+<button class="filter-btn" data-tag="tag3">Тег 7</button>
+<button class="filter-btn" data-tag="tag3">Тег 8</button>
+
+	
+<div class="container">
+    <div class="inner">
+        <!-- товар 1 -->
+        <div class="item" data-tags="tag1">
+            <img src="images/1.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 1200 RUB</strong></span>
+            <button class="btn" id="btn1">Add</button>
+            <div id="quantity-container1" style="display: none;">
+                <button id="subtract-btn1">-</button>
+                <span id="quantity1">0</span>
+                <button id="add-btn1">+</button>
+            </div>
+        </div>
+
+        <!-- товар 2 -->
+        <div class="item" data-tags="tag2">
+            <img src="images/1.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 1520 RUB</strong></span>
+            <button class="btn" id="btn2">Add</button>
+            <div id="quantity-container2" style="display: none;">
+                <button id="subtract-btn2">-</button>
+                <span id="quantity2">0</span>
+                <button id="add-btn2">+</button>
+            </div>
+        </div>
+
+        <!-- товар 3 -->
+        <div class="item">
+            <img src="images/1.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 2200 RUB</strong></span>
+            <button class="btn" id="btn3">Add</button>
+            <div id="quantity-container3" style="display: none;">
+                <button id="subtract-btn3">-</button>
+                <span id="quantity3">0</span>
+                <button id="add-btn3">+</button>
+            </div>
+        </div>
+
+        <!-- товар 4 -->
+        <div class="item">
+            <img src="images/1.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 1490 RUB</strong></span>
+            <button class="btn" id="btn4">Add</button>
+            <div id="quantity-container4" style="display: none;">
+                <button id="subtract-btn4">-</button>
+                <span id="quantity4">0</span>
+                <button id="add-btn4">+</button>
+            </div>
+        </div>
+
+        <!-- товар 5 -->
+        <div class="item" data-tags="tag1 tag2">
+            <img src="images/1.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 1800 RUB</strong></span>
+            <button class="btn" id="btn5">Add</button>
+            <div id="quantity-container5" style="display: none;">
+                <button id="subtract-btn5">-</button>
+                <span id="quantity5">0</span>
+                <button id="add-btn5">+</button>
+            </div>
+        </div>
+
+        <!-- товар 6 -->
+        <div class="item">
+            <img src="images/1.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 9190 RUB</strong></span>
+            <button class="btn" id="btn6">Add</button>
+            <div id="quantity-container6" style="display: none;">
+                <button id="subtract-btn6">-</button>
+                <span id="quantity6">0</span>
+                <button id="add-btn6">+</button>
+            </div>
         </div>
     </div>
+</div>
 
-    <!-- Repeat the above structure for each product -->
 
-    <button class="btn" id="cartButton" style="display: none;">Корзина</button>
+	<button id="go-to-cart" style="display: none;">Go to Cart</button>
 
-    <script src="js/app.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/item-counter.js"></script>
+	<script src="js/tags.js"></script>
+	
 </body>
 </html>
+
