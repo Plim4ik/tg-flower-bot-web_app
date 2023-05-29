@@ -1,26 +1,18 @@
-// Сначала определим общее количество товаров
-const totalItems = 6;
+let quantities = [0, 0, 0, 0, 0, 0];
 
-for(let i = 1; i <= totalItems; i++) {
-    const addButton = document.getElementById(`btn${i}`);
-    const subtractButton = document.getElementById(`subtract-btn${i}`);
-    const quantityElement = document.getElementById(`quantity${i}`);
+for(let i = 1; i <= 6; i++) {
+    let addButton = document.getElementById('btn' + i);
+    let subtractButton = document.getElementById('subtract-btn' + i);
+    let increaseButton = document.getElementById('add-btn' + i);
+    let quantityContainer = document.getElementById('quantity-container' + i);
+    let quantityDisplay = document.getElementById('quantity' + i);
 
     addButton.addEventListener('click', function() {
+        quantities[i-1]++;
+        quantityDisplay.innerText = quantities[i-1];
         addButton.style.display = 'none';
-        subtractButton.style.display = 'inline-block';
-        quantityElement.innerText = 1;
-        quantityElement.style.display = 'inline-block';
+        quantityContainer.style.display = 'inline';
     });
 
     subtractButton.addEventListener('click', function() {
-        let currentQuantity = parseInt(quantityElement.innerText);
-        if (currentQuantity > 1) {
-            quantityElement.innerText = --currentQuantity;
-        } else {
-            addButton.style.display = 'inline-block';
-            subtractButton.style.display = 'none';
-            quantityElement.style.display = 'none';
-        }
-    });
-}
+        if (quantities[i-1]
