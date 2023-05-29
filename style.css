@@ -1,55 +1,46 @@
-:root {
-  --main-color: #f8a818;  /*Оранжевый цвет*/
-  --tg-theme-text-color: #333;
-  --tg-theme-bg-color: #f5f5f5;
-  --tg-theme-hint-color: #888;
-  --tg-theme-link-color: #0066cc;
-  --tg-theme-button-color: var(--main-color); /*Используем основной цвет для кнопок*/
-  --tg-theme-button-text-color: #fff;
-  --button-hover-color: #ffcf70; /*Светлый оранжевый для эффекта наведения*/
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
-  color: var(--tg-theme-text-color);
-  background-color: var(--tg-theme-bg-color);
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	color: var(--tg-theme-text-color);
+	background-color: var(--tg-theme-bg-color);
 }
 
 .container {
-  max-width: 390px;
+	max-width: 390px;
 }
 
+
 .inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 230px 230px 230px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 230px 230px 230px;
 }
 
 .img {
-  width: 150px;
+	width: 150px;
 }
 
 .item {
-  text-align: center;
+	text-align: center;
 }
 
-.button {
-  display: inline-block;
-  padding: 5px 20px;
-  border: none;
-  background: var(--tg-theme-button-color);
-  border-radius: 10px;
-  color: var(--tg-theme-button-text-color);
-  text-transform: uppercase;
-  font-weight: 700;
-  align-items: center;
-  transition: background .2s linear;
+.btn {
+	display: inline-block;
+	padding: 5px 20px;
+	border: none;
+	background: rgb(248, 168, 24);
+	border-radius: 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	align-items: center;
+
+	transition: background .2s linear;
 }
 
-.button:hover {
-  background: var(--button-hover-color);
+.btn:hover {
+	background: lightgreen;
 }
 
 .tags {
@@ -62,15 +53,26 @@ body {
   display: inline-block;
   padding: 10px;
   margin: 0 10px;
-  background-color: var(--tg-theme-button-color); /*Используем основной цвет для тегов*/
-  color: var(--tg-theme-button-text-color);
+  background-color: #ccc;
+  color: #fff;
   text-decoration: none;
 }
 
 .tags a:hover {
-  background-color: var(--button-hover-color); /*Светлый оранжевый для эффекта наведения на тег*/
-}
+  background-color: #333;
+} 
 
 .filter-btn.active {
-  background-color: var(--button-hover-color);
+  background-color: lightgreen;
 }
+
+
+
+/*
+var(--tg-theme-bg-color)
+var(--tg-theme-text-color)
+var(--tg-theme-hint-color)
+var(--tg-theme-link-color)
+var(--tg-theme-button-color)
+var(--tg-theme-button-text-color)
+*/
