@@ -1,11 +1,12 @@
 :root {
+  --main-color: #f8a818;  /*Оранжевый цвет*/
   --tg-theme-text-color: #333;
   --tg-theme-bg-color: #f5f5f5;
   --tg-theme-hint-color: #888;
   --tg-theme-link-color: #0066cc;
-  --tg-theme-button-color: rgb(248, 168, 24);
+  --tg-theme-button-color: var(--main-color); /*Используем основной цвет для кнопок*/
   --tg-theme-button-text-color: #fff;
-  --button-hover-color: lightgreen;
+  --button-hover-color: #ffcf70; /*Светлый оранжевый для эффекта наведения*/
 }
 
 body {
@@ -61,13 +62,13 @@ body {
   display: inline-block;
   padding: 10px;
   margin: 0 10px;
-  background-color: #ccc;
+  background-color: var(--tg-theme-button-color); /*Используем основной цвет для тегов*/
   color: var(--tg-theme-button-text-color);
   text-decoration: none;
 }
 
 .tags a:hover {
-  background-color: var(--tg-theme-text-color);
+  background-color: var(--button-hover-color); /*Светлый оранжевый для эффекта наведения на тег*/
 }
 
 .filter-btn.active {
