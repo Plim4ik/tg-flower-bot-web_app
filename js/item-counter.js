@@ -2,17 +2,25 @@
 const totalItems = 6;
 
 for(let i = 1; i <= totalItems; i++) {
-    document.getElementById(`add-btn${i}`).addEventListener('click', function() {
-        const quantityElement = document.getElementById(`quantity${i}`);
-        let currentQuantity = parseInt(quantityElement.innerText);
-        quantityElement.innerText = ++currentQuantity;
+    const addButton = document.getElementById(`btn${i}`);
+    const subtractButton = document.getElementById(`subtract-btn${i}`);
+    const quantityElement = document.getElementById(`quantity${i}`);
+
+    addButton.addEventListener('click', function() {
+        addButton.style.display = 'none';
+        subtractButton.style.display = 'inline-block';
+        quantityElement.innerText = 1;
+        quantityElement.style.display = 'inline-block';
     });
 
-    document.getElementById(`subtract-btn${i}`).addEventListener('click', function() {
-        const quantityElement = document.getElementById(`quantity${i}`);
+    subtractButton.addEventListener('click', function() {
         let currentQuantity = parseInt(quantityElement.innerText);
-        if (currentQuantity > 0) {
+        if (currentQuantity > 1) {
             quantityElement.innerText = --currentQuantity;
+        } else {
+            addButton.style.display = 'inline-block';
+            subtractButton.style.display = 'none';
+            quantityElement.style.display = 'none';
         }
     });
 }

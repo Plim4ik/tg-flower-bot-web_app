@@ -17,84 +17,83 @@
 <button class="filter-btn" data-tag="tag3">Тег 7</button>
 <button class="filter-btn" data-tag="tag3">Тег 8</button>
 
-
-<!-- Кнопка корзины -->
-<button class="btn" id="cartButton" style="display: none;">Корзина</button>
-
-
 	
-	<div class="container">
-		<div class="inner">
-			<div class="item" tags-Тег1 tags-Тег2">
-    			<img src="images/1.png" alt="Flower" class="img">
-    			<span> Flower 1<strong>&bull; 1800 RUB</strong></span>
-    			<div class="quantity-container">
-        			<button class="btn quantity-btn" id="subtract-btn5">-</button>
-        			<span id="quantity5">0</span>
-        			<button class="btn quantity-btn" id="add-btn5">+</button>
-    			</div>
-    			<button class="btn" id="btn5">Add to Cart</button>
-			</div>
+<div class="container">
+    <div class="inner">
+        <!-- товар 1 -->
+        <div class="item" data-tags="tag1">
+            <img src="images/1.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 1200 RUB</strong></span>
+            <button class="btn" id="btn1">Add</button>
+            <div id="quantity-container1" style="display: none;">
+                <button id="subtract-btn1">-</button>
+                <span id="quantity1">0</span>
+                <button id="add-btn1">+</button>
+            </div>
+        </div>
 
-			<div class="item" tags-Тег1 tags-Тег2">
-    			<img src="images/1.png" alt="Flower" class="img">
-    			<span> Flower 2<strong>&bull; 1800 RUB</strong></span>
-    			<div class="quantity-container">
-        			<button class="btn quantity-btn" id="subtract-btn5">-</button>
-        			<span id="quantity5">0</span>
-        			<button class="btn quantity-btn" id="add-btn5">+</button>
-    			</div>
-    			<button class="btn" id="btn5">Add to Cart</button>
-			</div>
+        <!-- товар 2 -->
+        <div class="item" data-tags="tag2">
+            <img src="images/2.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 1520 RUB</strong></span>
+            <button class="btn" id="btn2">Add</button>
+            <div id="quantity-container2" style="display: none;">
+                <button id="subtract-btn2">-</button>
+                <span id="quantity2">0</span>
+                <button id="add-btn2">+</button>
+            </div>
+        </div>
 
-			<div class="item" tags-Тег1 tags-Тег2">
-    			<img src="images/1.png" alt="Flower" class="img">
-    			<span> Flower 3<strong>&bull; 1800 RUB</strong></span>
-    			<div class="quantity-container">
-        			<button class="btn quantity-btn" id="subtract-btn5">-</button>
-        			<span id="quantity5">0</span>
-        			<button class="btn quantity-btn" id="add-btn5">+</button>
-    			</div>
-    			<button class="btn" id="btn5">Add to Cart</button>
-			</div>
+        <!-- товар 3 -->
+        <div class="item">
+            <img src="images/3.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 2200 RUB</strong></span>
+            <button class="btn" id="btn3">Add</button>
+            <div id="quantity-container3" style="display: none;">
+                <button id="subtract-btn3">-</button>
+                <span id="quantity3">0</span>
+                <button id="add-btn3">+</button>
+            </div>
+        </div>
 
-			<div class="item" tags-Тег1 tags-Тег2">
-    			<img src="images/1.png" alt="Flower" class="img">
-    			<span> Flower 4<strong>&bull; 1800 RUB</strong></span>
-    			<div class="quantity-container">
-        			<button class="btn quantity-btn" id="subtract-btn5">-</button>
-        			<span id="quantity5">0</span>
-        			<button class="btn quantity-btn" id="add-btn5">+</button>
-    			</div>
-    			<button class="btn" id="btn5">Add to Cart</button>
-			</div>
+        <!-- товар 4 -->
+        <div class="item">
+            <img src="images/4.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 1490 RUB</strong></span>
+            <button class="btn" id="btn4">Add</button>
+            <div id="quantity-container4" style="display: none;">
+                <button id="subtract-btn4">-</button>
+                <span id="quantity4">0</span>
+                <button id="add-btn4">+</button>
+            </div>
+        </div>
 
-			<div class="item" tags-Тег1 tags-Тег2">
-    			<img src="images/1.png" alt="Flower" class="img">
-    			<span> Flower 5<strong>&bull; 1800 RUB</strong></span>
-    			<div class="quantity-container">
-        			<button class="btn quantity-btn" id="subtract-btn5">-</button>
-        			<span id="quantity5">0</span>
-        			<button class="btn quantity-btn" id="add-btn5">+</button>
-    			</div>
-    			<button class="btn" id="btn5">Add to Cart</button>
-			</div>
+        <!-- товар 5 -->
+        <div class="item" data-tags="tag1 tag2">
+            <img src="images/5.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 1800 RUB</strong></span>
+            <button class="btn" id="btn5">Add</button>
+            <div id="quantity-container5" style="display: none;">
+                <button id="subtract-btn5">-</button>
+                <span id="quantity5">0</span>
+                <button id="add-btn5">+</button>
+            </div>
+        </div>
 
-			<div class="item" tags-Тег1 tags-Тег2">
-    			<img src="images/1.png" alt="Flower" class="img">
-    			<span> Flower 6<strong>&bull; 1800 RUB</strong></span>
-    			<div class="quantity-container">
-        			<button class="btn quantity-btn" id="subtract-btn6">-</button>
-        			<span id="quantity6">0</span>
-        			<button class="btn quantity-btn" id="add-btn6">+</button>
-    			</div>
-    			<button class="btn" id="btn6">Add to Cart</button>
-			</div>
+        <!-- товар 6 -->
+        <div class="item">
+            <img src="images/6.png" alt="Flower" class="img">
+            <span> Flower <strong>&bull; 9190 RUB</strong></span>
+            <button class="btn" id="btn6">Add</button>
+            <div id="quantity-container6" style="display: none;">
+                <button id="subtract-btn6">-</button>
+                <span id="quantity6">0</span>
+                <button id="add-btn6">+</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-			
-		</div>
-	</div>
 
 	<button id="go-to-cart" style="display: none;">Go to Cart</button>
 
