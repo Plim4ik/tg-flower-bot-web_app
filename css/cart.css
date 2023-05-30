@@ -194,3 +194,38 @@ body {
 }
 
 
+/* Form */
+.checkout-form {
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    margin: auto;
+}
+
+.checkout-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.checkout-form input[type="text"], #checkout-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.checkout-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: rgb(248, 168, 24);
+    cursor: pointer;
+}
+
+.checkout-form input[type="submit"]:hover {
+    opacity: 0.8;
+}
