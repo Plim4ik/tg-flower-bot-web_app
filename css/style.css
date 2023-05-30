@@ -111,15 +111,9 @@ body {
 
 /* Стили для кнопки корзины */
 #go-to-cart {
-  position: fixed;
-  /* Закрепляем кнопку */
-  bottom: 20px;
-  /* Устанавливаем отступ от нижнего края */
-  left: 50%;
-  /* Устанавливаем отступ от левого края в 50% ширины экрана */
-  transform: translateX(-50%);
-  /* Смещаем кнопку на половину ее ширины влево, чтобы центрировать ее по горизонтали */
-  /* По умолчанию кнопка не отображается */
+  width: 350px;
+  text-align: center;
+  margin-top: 20px;
   padding: 10px 20px;
   /* Устанавливаем внутренние отступы */
   border: none;
@@ -200,6 +194,11 @@ body {
 
 /* Cart */
 
+#cart-items {
+  max-height: 600px;
+  overflow-y: scroll;
+}
+
 #cart-items .cart-product {
   display: flex;
   align-items: center;
@@ -250,6 +249,14 @@ body {
 
 }
 
+.deleteBtn {
+  background-color: rgb(160, 0, 0);
+  padding: 12px 17px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 .quantity-container button {
   width: 50px;
   height: 25px;
@@ -259,6 +266,7 @@ body {
 @media(max-width:430px) {
   .cart-container {
     width: 95%;
+    margin: auto;
   }
 
   .item span {
@@ -269,14 +277,23 @@ body {
     width: 130px;
   }
 
-
-
   .quantity-container button {
     width: 50px;
     height: 20px;
   }
 
+}
+
+
+@media(max-height:780px) {
   #go-to-cart {
-    font-size: 12px;
+    position: static;
+    bottom: 0;
+    left: 0;
+    transform: translate(0);
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    margin-bottom: 30px;
   }
 }
