@@ -5,9 +5,10 @@ window.addEventListener('load', function (e) {
     if (JSON.parse(localStorage.getItem('items')) !== null) {
         let no = 0
         let fullPrice = 0
+        const h3 = document.createElement('h3')
         JSON.parse(localStorage.getItem('items')).map(data => {
             no = no + data.no
-            fullPrice = fullPrice + data.price
+            fullPrice = Number(fullPrice) + Number(data.price)
             const cartProduct = document.createElement('div')
             const ImageProduct = document.createElement('div')
             const productTitle = document.createElement('div')
@@ -24,6 +25,7 @@ window.addEventListener('load', function (e) {
             deleteBtn.innerHTML = "DELETE"
             deleteBtn.id = data.id
             h4.innerHTML = data.name
+            h3.innerHTML = `Итого: ${fullPrice} руб`
             p.innerHTML = data.price + " RUB"
             qu.innerHTML = data.no + " шт"
             productTitle.appendChild(h4)
@@ -34,11 +36,11 @@ window.addEventListener('load', function (e) {
             cartProduct.appendChild(qu)
             cartProduct.appendChild(deleteBtn)
             cartItems.appendChild(cartProduct)
+            cartItems.appendChild(h3)
 
             deleteBtn.addEventListener("click", function (e) {
                 deleteFunc(e.target.id);
             })
-
             function deleteFunc(e) {
                 let items = []
                 JSON.parse(localStorage.getItem('items')).map(data => {
