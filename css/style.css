@@ -20,12 +20,17 @@ body {
 
 /* Стили для элемента с классом 'inner' */
 .inner {
-  display: grid;
-  /* Устанавливаем тип отображения на grid */
-  grid-template-columns: 1fr 1fr;
-  /* Создаем две колонки одинаковой ширины */
-  grid-template-rows: 230px 230px 230px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  max-height: 600px;
+  overflow-y: scroll;
   /* Создаем три строки высотой в 230px каждая */
+}
+
+.inner .item {
+  width: 50%;
 }
 
 /* Стили для изображений */
@@ -262,7 +267,6 @@ body {
   height: 25px;
 }
 
-
 @media(max-width:430px) {
   .cart-container {
     width: 95%;
@@ -284,16 +288,24 @@ body {
 
 }
 
+@media(max-width:390px) {
+  .container {
+    width: 100%;
+  }
 
-@media(max-height:780px) {
   #go-to-cart {
-    position: static;
-    bottom: 0;
-    left: 0;
-    transform: translate(0);
-    text-align: center;
-    margin: auto;
-    width: 80%;
-    margin-bottom: 30px;
+    width: auto;
+  }
+}
+
+@media(max-height:720px) {
+  .inner {
+    max-height: 80vh;
+  }
+}
+
+@media(max-height:630px) {
+  .inner {
+    max-height: 77vh;
   }
 }
