@@ -84,6 +84,8 @@ document.querySelectorAll('.item-counter .subtract').forEach(button => {
 });
 
 
+const GetProductToLocalStorage = JSON.parse(localStorage.getItem('items'))
+
 
 const addToCartBtn = this.document.getElementsByClassName('addToCart')
 
@@ -100,7 +102,6 @@ let items = []
 for (let i = 0; i < addToCartBtn.length; i++) {
     addToCartBtn[i].addEventListener('click', function (e) {
         if (typeof (Storage) !== 'undefined') {
-
             let item = {
                 id: i + 1,
                 name: e.target.parentElement.children[1].textContent.split(" ")[0],
@@ -110,12 +111,12 @@ for (let i = 0; i < addToCartBtn.length; i++) {
             }
 
 
-            if (JSON.parse(localStorage.getItem("items")) === null) {
+            if (GetProductToLocalStorage === null) {
                 items.push(item)
                 localStorage.setItem("items", JSON.stringify(items))
                 window.location.reload()
             } else {
-                const localItems = JSON.parse(localStorage.getItem("items"))
+                const localItems = GetProductToLocalStorage
                 localItems.map(data => {
                     if (item.id == data.id) {
                         item.no = data.no + 1
@@ -135,10 +136,10 @@ for (let i = 0; i < addToCartBtn.length; i++) {
     })
 }
 
-if (JSON.parse(localStorage.getItem('items')) !== null) {
+if (GetProductToLocalStorage !== null) {
     let no = 0
     let fullPrice = 0
-    JSON.parse(localStorage.getItem('items')).map(data => {
+    GetProductToLocalStorage.map(data => {
         no = no + data.no
         fullPrice = fullPrice + data.price
     })
@@ -146,3 +147,113 @@ if (JSON.parse(localStorage.getItem('items')) !== null) {
     btnQuon.innerHTML = no
 }
 
+const itemDivs = document.querySelectorAll('.item');
+
+for (let i = 0; i < itemDivs.length; i++) {
+    if (GetProductToLocalStorage !== null) {
+        GetProductToLocalStorage.map(data => {
+            const idFind = itemDivs[i].children[2].id
+            const idFinded = Number(itemDivs[i].children[2].id.split('')[idFind.length - 1])
+            if (data.id == idFinded) {
+                if (data.no > 0) {
+                    itemDivs[i].children[2].style.display = "none";
+                    itemDivs[i].children[3].style.display = "flex";
+                }
+
+                itemDivs[i].children[3].children[1].innerHTML = data.no
+            }
+        })
+    }
+}
+
+const BtnMinus = document.querySelectorAll('.btnMinus');
+const btnPlus = document.querySelectorAll('.btnPlus');
+
+
+for (let i = 0; i < BtnMinus.length; i++) {
+    BtnMinus[i].addEventListener('click', function (e) {
+        if (typeof (Storage) !== 'undefined') {
+
+            const findId = e.target.parentElement.parentElement.children[2].id
+
+            const FINED = e.target.parentElement.parentElement.children[2].id[findId.length - 1];
+            let item = {
+                id: i + 1,
+                name: e.target.parentElement.parentElement.children[1].textContent.split(" ")[0],
+                price: e.target.parentElement.parentElement.children[1].textContent.split(" ")[2],
+                no: 1,
+                img: e.target.parentElement.parentElement.children[0].src
+            }
+
+            let booleanF = true
+
+            const localItems = GetProductToLocalStorage
+            localItems.map(data => {
+                if (item.id == data.id) {
+                    if (data.no == 1) {
+                        deleteFunc(FINED)
+                        booleanF = false
+                    } else {
+                        item.no = data.no - 1
+                    }
+                } else {
+                    items.push(data)
+                }
+            })
+            if (booleanF) {
+                items.push(item)
+                localStorage.setItem('items', JSON.stringify(items))
+                window.location.reload()
+            }
+        } else {
+            alert('storage is not working on your browser');
+        }
+    })
+}
+
+
+function deleteFunc(e) {
+    let asdasdasd = []
+    JSON.parse(localStorage.getItem('items')).map(data => {
+        if (data.id != e) {
+            asdasdasd.push(data)
+        }
+        localStorage.setItem('items', JSON.stringify(asdasdasd))
+        window.location.reload()
+    })
+}
+
+for (let i = 0; i < btnPlus.length; i++) {
+    btnPlus[i].addEventListener('click', function (e) {
+        if (typeof (Storage) !== 'undefined') {
+            let item = {
+                id: i + 1,
+                name: e.target.parentElement.parentElement.children[1].textContent.split(" ")[0],
+                price: e.target.parentElement.parentElement.children[1].textContent.split(" ")[2],
+                no: 1,
+                img: e.target.parentElement.parentElement.children[0].src
+            }
+
+            if (GetProductToLocalStorage === null) {
+                items.push(item)
+                localStorage.setItem("items", JSON.stringify(items))
+                window.location.reload()
+            } else {
+                const localItems = GetProductToLocalStorage
+                localItems.map(data => {
+                    if (item.id == data.id) {
+                        item.no = data.no + 1
+                    } else {
+                        items.push(data)
+                    }
+                })
+                items.push(item)
+                localStorage.setItem('items', JSON.stringify(items))
+                window.location.reload()
+            }
+
+        } else {
+            alert('storage is not working on your browser');
+        }
+    })
+}
