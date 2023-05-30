@@ -109,6 +109,93 @@ body {
   /* Изменяем цвет фона */
 }
 
+/* Стили для кнопки корзины */
+#go-to-cart {
+  position: fixed;
+  /* Закрепляем кнопку */
+  bottom: 20px;
+  /* Устанавливаем отступ от нижнего края */
+  left: 50%;
+  /* Устанавливаем отступ от левого края в 50% ширины экрана */
+  transform: translateX(-50%);
+  /* Смещаем кнопку на половину ее ширины влево, чтобы центрировать ее по горизонтали */
+  /* По умолчанию кнопка не отображается */
+  padding: 10px 20px;
+  /* Устанавливаем внутренние отступы */
+  border: none;
+  /* Удаляем рамку */
+  background-color: rgb(248, 168, 24);
+  /* Устанавливаем цвет фона */
+  border-radius: 10px;
+  /* Устанавливаем радиус скругления углов */
+  color: #fff;
+  /* Устанавливаем цвет текста */
+  text-transform: uppercase;
+  /* Преобразуем текст в верхний регистр */
+  font-weight: 700;
+  /* Устанавливаем жирность шрифта */
+  transition: background .2s linear;
+  cursor: pointer;
+  text-decoration: none;
+  /* Добавляем анимацию изменения фона */
+}
+
+.product {
+  width: 200px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.add-to-cart {
+  display: inline-block;
+  /* Устанавливаем тип отображения на inline-block */
+  padding: 5px 20px;
+  /* Устанавливаем внутренние отступы */
+  border: none;
+  /* Удаляем рамку */
+  background: rgb(248, 168, 24);
+  /* Устанавливаем цвет фона */
+  border-radius: 10px;
+  /* Устанавливаем радиус скругления углов */
+  color: #fff;
+  /* Устанавливаем цвет текста */
+  text-transform: uppercase;
+  /* Преобразуем текст в верхний регистр */
+  font-weight: 700;
+  /* Устанавливаем жирность шрифта */
+  align-items: center;
+  /* Центрируем текст по вертикали */
+
+  transition: background .2s linear;
+}
+
+.add-to-cart:hover {
+  background: lightgreen;
+}
+
+.item-counter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.item-counter button {
+  padding: 5px 10px;
+  color: white;
+  background-color: rgb(248, 168, 24);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.item-counter button:hover {
+  background-color: #1e7e34;
+}
 
 
 /* Cart */
@@ -183,6 +270,7 @@ body {
   }
 
 
+
   .quantity-container button {
     width: 50px;
     height: 20px;
@@ -191,41 +279,4 @@ body {
   #go-to-cart {
     font-size: 12px;
   }
-}
-
-
-/* Form */
-.checkout-form {
-    width: 300px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    margin: auto;
-}
-
-.checkout-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.checkout-form input[type="text"], #checkout-form input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-}
-
-.checkout-form input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    background-color: rgb(248, 168, 24);
-    cursor: pointer;
-}
-
-.checkout-form input[type="submit"]:hover {
-    opacity: 0.8;
 }
