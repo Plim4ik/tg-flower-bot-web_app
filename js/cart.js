@@ -61,5 +61,41 @@ window.addEventListener('load', function (e) {
         const h1 = document.createElement('h1')
         h1.innerHTML = "Корзина пуста"
         cartItems.appendChild(h1)
-    }
+    };
+    JSON.parse(localStorage.getItem('items')).map((data, index) => {
+          // Ваш код для добавления товаров на страницу...
+
+          // Теперь добавим информацию о товаре в скрытые поля формы
+          const itemsInfo = document.querySelector('#items-info');
+
+          const idInput = document.createElement('input');
+          idInput.type = 'hidden';
+          idInput.name = `items[${index}][id]`;
+          idInput.value = data.id;
+          itemsInfo.appendChild(idInput);
+
+          const imgInput = document.createElement('input');
+          imgInput.type = 'hidden';
+          imgInput.name = `items[${index}][img]`;
+          imgInput.value = data.img;
+          itemsInfo.appendChild(imgInput);
+
+          const nameInput = document.createElement('input');
+          nameInput.type = 'hidden';
+          nameInput.name = `items[${index}][name]`;
+          nameInput.value = data.name;
+          itemsInfo.appendChild(nameInput);
+
+          const priceInput = document.createElement('input');
+          priceInput.type = 'hidden';
+          priceInput.name = `items[${index}][price]`;
+          priceInput.value = data.price;
+              itemsInfo.appendChild(priceInput);
+
+          const noInput = document.createElement('input');
+          noInput.type = 'hidden';
+          noInput.name = `items[${index}][no]`;
+          noInput.value = data.no;
+          itemsInfo.appendChild(noInput);
+        });
 });
