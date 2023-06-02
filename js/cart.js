@@ -54,12 +54,12 @@ window.addEventListener('load', function (e) {
         })
         if (!JSON.parse(localStorage.getItem('items')).length) {
             const h1 = document.createElement('h1')
-            h1.innerHTML = "корзина пусто"
+            h1.innerHTML = "Корзина пуста"
             cartItems.appendChild(h1)
         }
     } else {
         const h1 = document.createElement('h1')
-        h1.innerHTML = "корзина пусто"
+        h1.innerHTML = "Корзина пуста"
         cartItems.appendChild(h1)
     }
 });
