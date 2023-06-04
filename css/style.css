@@ -309,3 +309,33 @@ body {
     max-height: 77vh;
   }
 }
+
+.telegram-button {
+  display: inline-block;
+  /* Устанавливаем тип отображения на inline-block */
+  padding: 5px 20px;
+  /* Устанавливаем внутренние отступы */
+  border: none;
+  /* Удаляем рамку */
+  background: rgb(248, 168, 24);
+  /* Устанавливаем цвет фона */
+  border-radius: 10px;
+  /* Устанавливаем радиус скругления углов */
+  color: #fff;
+  /* Устанавливаем цвет текста */
+  text-transform: uppercase;
+  /* Преобразуем текст в верхний регистр */
+  font-weight: 700;
+  /* Устанавливаем жирность шрифта */
+  align-items: center;
+  /* Центрируем текст по вертикали */
+
+  transition: background .2s linear;
+  /* Добавляем анимацию изменения фона */
+}
+
+/* Стили для кнопок при наведении */
+.telegram-button:hover {
+  background: lightgreen;
+  /* Изменяем цвет фона */
+}
