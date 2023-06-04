@@ -2,7 +2,7 @@ document.querySelector('#checkout-form').addEventListener('submit', function(eve
   event.preventDefault(); // Предотвращает перезагрузку страницы
 
   // Выполняем POST-запрос с данными формы
-  fetch('https://hiblakk.github.io', {
+  fetch('https://hiblakk.github.io/cart.html', {
     method: 'POST',
     body: new FormData(event.target), // event.target ссылается на форму
   })
