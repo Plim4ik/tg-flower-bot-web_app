@@ -339,3 +339,19 @@ body {
   background: lightgreen;
   /* Изменяем цвет фона */
 }
+
+#back-button {
+  display: inline-block;
+  margin: 10px;
+  background: rgb(248, 168, 24);
+  border-radius: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  align-items: center;
+  transition: background .2s linear;
+}
+
+#back-button:hover {
+  background: lightgreen;
+}
