@@ -344,10 +344,9 @@ body {
   display: inline-block;
   margin: 10px;
   background: rgb(248, 168, 24);
-  border-radius: 10px;
+  border-radius: 20px;
   color: #fff;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 500;
   align-items: center;
   transition: background .2s linear;
 }
