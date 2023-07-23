@@ -211,6 +211,10 @@ body {
 
 
 /* Cart */
+.name_price{
+  display: flex;
+  flex-direction: column;
+}
 
 #cart-items {
   max-height: 600px;
@@ -247,11 +251,11 @@ body {
 }
 
 .cart-container {
-  /* width: 400px; */
+  width: 400px;
 }
 
 .cart_container_without{
-  display: flex;
+  /* display: flex; */
 }
 
 .cart-container input {
@@ -274,11 +278,15 @@ body {
 }
 
 .deleteBtn {
-  background-color: rgb(160, 0, 0);
+  background-color: transparent;
   padding: 12px 17px;
   border: none;
-  color: white;
   cursor: pointer;
+}
+
+.deleteBtn svg{
+  color: red;
+  width: 15px;
 }
 
 .quantity-container button {
@@ -369,6 +377,7 @@ body {
   font-weight: 700;
   text-align: center; /* Центрируем текст в кнопке */
   transition: background .2s linear;
+  text-decoration: none;
 }
 
 #back-button:hover {
