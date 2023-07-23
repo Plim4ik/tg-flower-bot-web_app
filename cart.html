@@ -10,23 +10,25 @@
     <a href="index.html" id="back-button">Назад</a>
     <div class="cart-container">
       <h2>Ваша корзина</h2>
-      <div id="cart-items">
-        <!-- Тут будут отображаться товары -->
+      <div class="cart_container_without">
+        <div id="cart-items">
+          <!-- Тут будут отображаться товары -->
+        </div>
+        <form id="checkout-form">
+          <!-- Тут будет форма для оформления заказа -->
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" required />
+
+          <label for="email">Ваш email</label>
+          <input type="email" id="email" required />
+
+          <label for="address">Адрес доставки</label>
+          <input type="text" id="address" required />
+
+          <div id="items-info"></div>
+          <input type="submit" value="Оплатить" />
+        </form>
       </div>
-      <form id="checkout-form">
-        <!-- Тут будет форма для оформления заказа -->
-        <label for="name">Ваше имя</label>
-        <input type="text" id="name" required />
-
-        <label for="email">Ваш email</label>
-        <input type="email" id="email" required />
-
-        <label for="address">Адрес доставки</label>
-        <input type="text" id="address" required />
-        
-        <div id="items-info"></div>
-        <input type="submit" value="Оплатить" />
-      </form>
     </div>
 
     <script src="js/cart.js"></script>

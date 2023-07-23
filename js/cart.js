@@ -15,7 +15,6 @@ window.addEventListener('load', function (e) {
             const qu = document.createElement('div')
             const deleteBtn = document.createElement('button')
             const h4 = document.createElement('h4')
-            const p = document.createElement('p')
             const img = document.createElement('img')
             img.src = data.img
             cartProduct.className = "cart-product"
@@ -26,10 +25,8 @@ window.addEventListener('load', function (e) {
             deleteBtn.id = data.id
             h4.innerHTML = data.name
             h3.innerHTML = `Итого: ${fullPrice} руб`
-            p.innerHTML = data.price + " RUB"
             qu.innerHTML = data.no + " шт"
             productTitle.appendChild(h4)
-            productTitle.appendChild(p)
             ImageProduct.appendChild(img)
             cartProduct.appendChild(ImageProduct)
             cartProduct.appendChild(productTitle)
