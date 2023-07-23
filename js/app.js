@@ -104,13 +104,13 @@ for (let i = 0; i < addToCartBtn.length; i++) {
         if (typeof (Storage) !== 'undefined') {
             let item = {
                 id: i + 1,
-                name: e.target.parentElement.children[1].textContent.split(" ")[0],
-                price: e.target.parentElement.children[1].textContent.split(" ")[2],
+                name: e.target.parentElement.children[1].querySelector(".item_name").innerHTML,
+                price: e.target.parentElement.children[1].querySelector(".price").innerHTML,
                 no: 1,
                 img: e.target.parentElement.children[0].src
             }
-
-
+            console.log()
+            
             if (GetProductToLocalStorage === null) {
                 items.push(item)
                 localStorage.setItem("items", JSON.stringify(items))
@@ -225,7 +225,7 @@ function deleteFunc(e) {
 
 for (let i = 0; i < btnPlus.length; i++) {
     btnPlus[i].addEventListener('click', function (e) {
-        if (typeof (Storage) !== 'undefined') {
+        if (typeof (Storage) !== 'undefined') { 
             let item = {
                 id: i + 1,
                 name: e.target.parentElement.parentElement.children[1].textContent.split(" ")[0],

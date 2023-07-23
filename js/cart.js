@@ -7,8 +7,8 @@ window.addEventListener('load', function (e) {
         let fullPrice = 0
         const h3 = document.createElement('h3')
         JSON.parse(localStorage.getItem('items')).map(data => {
-            no = no + data.no
-            fullPrice = Number(fullPrice) + Number(data.price * data.no)
+            no = no + Number(data.no)
+            fullPrice = Number(fullPrice) + Number(Number(data.price) * Number(data.no))
             const cartProduct = document.createElement('div')
             const ImageProduct = document.createElement('div')
             const productTitle = document.createElement('div')
