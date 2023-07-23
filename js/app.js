@@ -179,8 +179,8 @@ for (let i = 0; i < BtnMinus.length; i++) {
             const FINED = e.target.parentElement.parentElement.children[2].id[findId.length - 1];
             let item = {
                 id: i + 1,
-                name: e.target.parentElement.parentElement.children[1].textContent.split(" ")[0],
-                price: e.target.parentElement.parentElement.children[1].textContent.split(" ")[2],
+                name: e.target.parentElement.parentElement.querySelector(".item_name").innerHTML,
+                price: e.target.parentElement.parentElement.querySelector(".price").innerHTML,
                 no: 1,
                 img: e.target.parentElement.parentElement.children[0].src
             }
@@ -211,25 +211,14 @@ for (let i = 0; i < BtnMinus.length; i++) {
     })
 }
 
-
-function deleteFunc(e) {
-    let asdasdasd = []
-    JSON.parse(localStorage.getItem('items')).map(data => {
-        if (data.id != e) {
-            asdasdasd.push(data)
-        }
-        localStorage.setItem('items', JSON.stringify(asdasdasd))
-        window.location.reload()
-    })
-}
-
 for (let i = 0; i < btnPlus.length; i++) {
     btnPlus[i].addEventListener('click', function (e) {
         if (typeof (Storage) !== 'undefined') { 
+            console.log()
             let item = {
                 id: i + 1,
-                name: e.target.parentElement.parentElement.children[1].textContent.split(" ")[0],
-                price: e.target.parentElement.parentElement.children[1].textContent.split(" ")[2],
+                name: e.target.parentElement.parentElement.querySelector(".item_name").innerHTML,
+                price: e.target.parentElement.parentElement.querySelector(".price").innerHTML,
                 no: 1,
                 img: e.target.parentElement.parentElement.children[0].src
             }
@@ -255,5 +244,16 @@ for (let i = 0; i < btnPlus.length; i++) {
         } else {
             alert('storage is not working on your browser');
         }
+    })
+}
+
+function deleteFunc(e) {
+    let asdasdasd = []
+    JSON.parse(localStorage.getItem('items')).map(data => {
+        if (data.id != e) {
+            asdasdasd.push(data)
+        }
+        localStorage.setItem('items', JSON.stringify(asdasdasd))
+        window.location.reload()
     })
 }
