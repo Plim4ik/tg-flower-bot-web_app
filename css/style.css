@@ -253,6 +253,8 @@ button {
 #cart-items .cart-product .product-title {
   display: flex;
   flex-direction: column;
+  max-width: 120px;
+  width: 120px;
 }
 
 #cart-items .cart-product .product-title h4,
@@ -303,9 +305,13 @@ button {
   cursor: pointer;
 }
 
-.deleteBtn svg {
-  color: red;
-  width: 15px;
+.count{
+  width: 40px;
+  max-width: 60px;
+}
+
+#img_delete {
+  width: 15px !important;
 }
 
 .quantity-container button {
