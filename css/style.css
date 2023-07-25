@@ -258,6 +258,7 @@ button {
 #checkout-form {
   display: flex;
   flex-direction: column;
+  padding-bottom: 300px;
 }
 
 #checkout-form input {
