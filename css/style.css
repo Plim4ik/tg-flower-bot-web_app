@@ -1,3 +1,7 @@
+:root {
+  --display-width: 380px;
+}
+
 /* Основные стили для всего тела документа */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 body {
@@ -29,7 +33,7 @@ button {
 /* Стили для контейнера */
 .btns_container,
 .container {
-  max-width: 390px;
+  max-width: var(--display-width);
   /* Устанавливаем максимальную ширину контейнера */
 }
 
@@ -136,7 +140,7 @@ button {
 /* Стили для кнопки корзины */
 .submit_cart,
 #go-to-cart {
-  width: 390px;
+  width: calc(var(--display-width) - 41px);
   text-align: center;
   margin-top: 20px;
   padding: 10px 20px;
@@ -229,7 +233,7 @@ button {
 #cart-items {
   max-height: 600px;
   overflow-y: scroll;
-  width: 400px;
+  width: var(--display-width);
   margin-right: 20px;
 }
 
@@ -264,17 +268,9 @@ button {
 
 #checkout-form input {
   display: block;
-  width: 390px;
+  width: var(--display-width);
   padding: 5px;
   box-sizing: border-box;
-}
-
-.cart-container {
-  width: 400px;
-}
-
-.cart_container_without {
-  /* display: flex; */
 }
 
 .cart-container input {
