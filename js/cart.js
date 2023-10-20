@@ -45,6 +45,7 @@ window.addEventListener("load", function (e) {
       deleteBtn.addEventListener("click", function (e) {
         deleteFunc(data.id);
       });
+
       function deleteFunc(e) {
         let items = [];
         JSON.parse(localStorage.getItem("items")).map((data) => {
