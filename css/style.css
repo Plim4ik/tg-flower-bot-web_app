@@ -411,13 +411,14 @@ button {
 
 
 
-button {
+#applyPromoButton {
   background: none;
   border: none;
   color: #a083df;
   cursor: pointer;
   font-size: 14px;
-  font-weight: bold; 
+  font-weight: bold;
 }
+
 
 
