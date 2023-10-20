@@ -402,30 +402,19 @@ button {
   background: lightgreen;
 }
 
-.promo-code {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-label {
-  flex: 1;
-  margin-right: 10px;
-}
 
 .input-button-container {
   display: flex;
-  align-items: center;
+  align-items: right;
+  max-width: 380px;
 }
 
 input {
   flex: 1;
-  border: none;
   border-radius: 5px;
   padding: 5px;
 }
+
 
 button {
   background: none;
