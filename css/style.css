@@ -409,11 +409,6 @@ button {
   max-width: 380px;
 }
 
-input {
-  flex: 1;
-  border-radius: 5px;
-  padding: 5px;
-}
 
 
 button {
@@ -421,5 +416,8 @@ button {
   border: none;
   color: #a083df; /* Цвет текста "Применить" */
   cursor: pointer;
+  font-size: 14px; /* Увеличение размера текста */
+  font-weight: bold; /* Жирное начертание текста */
 }
+
 
