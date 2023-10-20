@@ -401,3 +401,26 @@ button {
 #back-button:hover {
   background: lightgreen;
 }
+
+.promo-input {
+  position: relative;
+  display: inline-block;
+}
+
+.promo-input input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.promo-input .apply-button {
+  position: absolute;
+  background: none;
+  border: none;
+  color: #a083df; /* Цвет текста */
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
