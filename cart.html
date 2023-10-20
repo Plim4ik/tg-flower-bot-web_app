@@ -16,6 +16,14 @@
         </div>
         <form id="checkout-form">
           <!-- Тут будет форма для оформления заказа -->
+          <div class="promo-code">
+            <label for="promo">Промокод</label>
+            <div class="input-button-container">
+                <input type="text" id="promo" name="promo" />
+                <button type="button" id="applyPromoButton">Применить</button>
+            </div>
+          </div>
+
           <label for="name">Ваше имя</label>
           <input type="text" id="name" required />
 
@@ -24,14 +32,6 @@
 
           <label for="address">Адрес доставки</label>
           <input type="text" id="address" name="address" required />
-
-          <div class="promo-code">
-            <label for="promo">Промокод</label>
-            <div class="input-button-container">
-                <input type="text" id="promo" name="promo" />
-                <button type="button" id="applyPromoButton">Применить</button>
-            </div>
-          </div>
 
           <div id="items-info"></div>
           <input type="submit" value="Оплатить" class="submit_cart" />
