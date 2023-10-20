@@ -414,10 +414,10 @@ button {
 button {
   background: none;
   border: none;
-  color: #a083df; /* Цвет текста "Применить" */
+  color: #a083df;
   cursor: pointer;
-  font-size: 14px; /* Увеличение размера текста */
-  font-weight: bold; /* Жирное начертание текста */
+  font-size: 14px;
+  font-weight: bold; 
 }
 
 
