@@ -133,6 +133,16 @@ button {
   /* Изменяем цвет фона */
 }
 
+.btns_container {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.btns_container::-webkit-scrollbar {
+  display: none;
+}
+
+
 .filter-btn {
   background-color: #a083df;
   border-radius: 7px;
