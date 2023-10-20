@@ -110,7 +110,7 @@ for (let i = 0; i < addToCartBtn.length; i++) {
                 img: e.target.parentElement.children[0].src
             }
             console.log()
-            
+
             if (GetProductToLocalStorage === null) {
                 items.push(item)
                 localStorage.setItem("items", JSON.stringify(items))
@@ -213,7 +213,7 @@ for (let i = 0; i < BtnMinus.length; i++) {
 
 for (let i = 0; i < btnPlus.length; i++) {
     btnPlus[i].addEventListener('click', function (e) {
-        if (typeof (Storage) !== 'undefined') { 
+        if (typeof (Storage) !== 'undefined') {
             console.log()
             let item = {
                 id: i + 1,
