@@ -402,25 +402,35 @@ button {
   background: lightgreen;
 }
 
-.promo-input {
-  position: relative;
-  display: inline-block;
-}
-
-.promo-input input {
-  padding: 10px;
+.promo-code {
+  display: flex;
+  align-items: center;
   border: 1px solid #ccc;
   border-radius: 5px;
+  padding: 5px;
 }
 
-.promo-input .apply-button {
-  position: absolute;
+label {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-button-container {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  flex: 1;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+button {
   background: none;
   border: none;
-  color: #a083df; /* Цвет текста */
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+  color: #a083df; /* Цвет текста "Применить" */
   cursor: pointer;
 }
 

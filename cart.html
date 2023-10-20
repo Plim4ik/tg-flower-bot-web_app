@@ -25,13 +25,14 @@
           <label for="address">Адрес доставки</label>
           <input type="text" id="address" name="address" required />
 
-          <label for="address">Промокод</label>
-          <div style="display: flex;">
-              <div class="promo-input">
-                  <input type="text" id="address" name="address" placeholder="Введите промокод..." />
-                  <button type="button" onclick="applyPromoCode" class="apply-button">Применить</button>
-              </div>
-          </div>          
+          <div class="promo-code">
+            <label for="address">Введите промокод</label>
+            <div class="input-button-container">
+                <input type="text" id="address" name="address" required placeholder="Промокод..." />
+                <button type="button" onclick="applyPromoCode">Применить</button>
+            </div>
+          </div>
+               
           
           <div id="items-info"></div>
           <input type="submit" value="Оплатить" class="submit_cart"/>
