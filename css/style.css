@@ -31,11 +31,10 @@ button {
   font-family: "Roboto", sans-serif !important;
 }
 
-/* Стили для контейнера */
+
 .btns_container,
 .container {
   max-width: var(--display-width);
-  /* Устанавливаем максимальную ширину контейнера */
 }
 
 .btns_container {
@@ -43,7 +42,7 @@ button {
   align-items: center;
 }
 
-/* Стили для элемента с классом 'inner' */
+
 .inner {
   margin-top: 20px;
   display: flex;
@@ -51,23 +50,19 @@ button {
   margin-bottom: 20px;
   max-height: 600px;
   overflow-y: scroll;
-  /* Создаем три строки высотой в 230px каждая */
 }
 
 .inner .item {
   width: 50%;
 }
 
-/* Стили для изображений */
+
 .img {
   width: 150px;
-  /* Устанавливаем ширину изображений */
 }
 
-/* Стили для элемента с классом 'item' */
 .item {
   text-align: center;
-  /* Центрируем текст */
 }
 
 /* Стили для кнопок */
@@ -101,37 +96,7 @@ button {
   /* Изменяем цвет фона */
 }
 
-/* Стили для тегов */
-.tags {
-  display: flex;
-  /* Устанавливаем тип отображения на flex */
-  justify-content: center;
-  /* Центрируем теги по горизонтали */
-  align-items: center;
-  /* Центрируем теги по вертикали */
-}
 
-/* Стили для ссылок тегов */
-.tags a {
-  display: inline-block;
-  /* Устанавливаем тип отображения на inline-block */
-  padding: 10px;
-  /* Устанавливаем внутренние отступы */
-  margin: 0 10px;
-  /* Устанавливаем внешние отступы */
-  background-color: #a083df;
-  /* Устанавливаем цвет фона */
-  color: #fff;
-  /* Устанавливаем цвет текста */
-  text-decoration: none;
-  /* Удаляем подчеркивание у ссылок */
-}
-
-/* Стили для ссылок тегов при наведении */
-.tags a:hover {
-  background-color: #333;
-  /* Изменяем цвет фона */
-}
 
 .btns_container {
   white-space: nowrap;
@@ -189,14 +154,6 @@ button {
   font-size: 16px;
 }
 
-.product {
-  width: 200px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  margin: 20px auto;
-  text-align: center;
-}
 
 .add-to-cart {
   display: inline-block;
