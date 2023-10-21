@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const promocode = promoInput.value;
 
         // Пример отправки POST-запроса
-        const url = 'https://212.109.194.133:8443/shop/calculate-cart-total/';
+        const url = 'http://212.109.194.133:8888/shop/calculate-cart-total';
         const requestData = {
             items: [
                 { bouquete: 'Васаби', amount: 2 },
