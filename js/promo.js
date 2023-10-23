@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const applyPromoButton = document.getElementById('applyPromoButton');
-    
+
     applyPromoButton.addEventListener('click', function () {
         // Получение значения промокода из поля ввода
         const promoInput = document.getElementById('promo');
@@ -8,23 +8,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Получение информации о букетах из скрытых полей формы
         const itemsInfo = document.querySelector("#items-info");
-        const bouquetInputs = itemsInfo.querySelectorAll("input[name^='items']");
+        const bouquetInputs = itemsInfo.querySelectorAll("input[name$='[name]']");
+        const noInputs = itemsInfo.querySelectorAll("input[name$='[no]']");
         const bouquets = [];
 
-        bouquetInputs.forEach(input => {
-            const name = input.value;
-            const amountInput = itemsInfo.querySelector(`input[name='${input.name.replace('name', 'no')}']`);
-            const amount = amountInput.value;
-            bouquets.push({ bouquet: name, amount: parseInt(amount) });
+        bouquetInputs.forEach((input, index) => {
+            const name = input.value.trim();
+            const amount = parseInt(noInputs[index].value); 
+            if (!isNaN(amount)) {
+                bouquets.push({ bouquete: name, amount: amount });
+            }
         });
 
         // Пример отправки POST-запроса
         const url = 'https://plimrecords.com:8443/shop/calculate-cart-total';
         const requestData = {
             items: bouquets,
-            tgid: '463863956',
+            tgid: '324123',
             promocode: promocode,
         };
+        // Не трогать, проверка JSON
+        console.log(requestData);
 
         // Отправка запроса с данными
         fetch(url, {
