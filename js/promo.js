@@ -2,20 +2,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const applyPromoButton = document.getElementById('applyPromoButton');
 
     applyPromoButton.addEventListener('click', function () {
-
         const promoInput = document.getElementById('promo');
         const promocode = promoInput.value;
 
-        if (promocode.trim() === '') {
-            alert('Поле промокода не должно быть пустым.');
-            return; 
-        }
 
         const cartItems = document.querySelector("#cart-items");
         cartItems.querySelectorAll("h3").forEach(function (element) {
             element.remove();
         });
 
+        // Получение значения tgid из скрытого поля на странице cart.html
+        const tgidInput = document.querySelector("input[name='tgid']");
+        const tgid = tgidInput.value;
 
         const itemsInfo = document.querySelector("#items-info");
         const bouquetInputs = itemsInfo.querySelectorAll("input[name$='[name]']");
@@ -33,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const url = 'https://plimrecords.com:8443/shop/calculate-cart-total';
         const requestData = {
             items: bouquets,
-            tgid: 463863956,
+            tgid: tgid, // Используем значение tgid из скрытого поля
             promocode: promocode,
         };
 
@@ -55,14 +53,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     const totalAfterDiscount = requestDataServer.total_price;
                     const promocodeApplied = requestDataServer.promocode_applied;
 
-                    const h3Total = document.createElement("h3");
-                    h3Total.innerHTML = `Итого: ${totalAfterDiscount} руб`;
-                    cartItems.appendChild(h3Total);
+                    if (promocode.trim() === '') {
+                        alert('Поле промокода не должно быть пустым.');
+                        const h3Total = document.createElement("h3");
+                        h3Total.innerHTML = `Итого: ${totalAfterDiscount} руб`;
+                        cartItems.appendChild(h3Total);
+                        return;
+                    }
 
-                    const h3Discount = document.createElement("h3");
-                    h3Discount.innerHTML = `Цена до скидки: ${totalBeforeDiscount} руб`;
-                    h3Discount.style.textDecoration = "line-through";
-                    cartItems.appendChild(h3Discount);
+                    if (promocodeApplied) {
+                        const h3Total = document.createElement("h3");
+                        h3Total.innerHTML = `Итого: ${totalAfterDiscount} руб`;
+                        cartItems.appendChild(h3Total);
+                    
+                        const h3Discount = document.createElement("h3");
+                        h3Discount.innerHTML = `Цена до скидки: ${totalBeforeDiscount} руб`;
+                        h3Discount.style.textDecoration = "line-through";
+                        cartItems.appendChild(h3Discount);    
+                    } else {
+                        const h3Total = document.createElement("h3");
+                        h3Total.innerHTML = `Итого: ${totalAfterDiscount} руб`;
+                        cartItems.appendChild(h3Total);
+                    }
 
                     if (promocodeApplied) {
                         alert("Промокод применен.");
