@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Пример отправки POST-запроса
-        const url = 'http://212.109.194.133:8888/shop/calculate-cart-total';
+        const url = 'https://plimrecords.com:8443/shop/calculate-cart-total';
         const requestData = {
             items: bouquets,
             tgid: '463863956',
