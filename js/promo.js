@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return; // Прекратить выполнение функции
         }
 
+        // Удаление существующих элементов h3
+        const cartItems = document.querySelector("#cart-items");
+        cartItems.querySelectorAll("h3").forEach(function (element) {
+            element.remove();
+        });
+
         // Получение информации о букетах из скрытых полей формы
         const itemsInfo = document.querySelector("#items-info");
         const bouquetInputs = itemsInfo.querySelectorAll("input[name$='[name]']");
@@ -19,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         bouquetInputs.forEach((input, index) => {
             const name = input.value.trim();
-            const amount = parseInt(noInputs[index].value); 
+            const amount = parseInt(noInputs[index].value);
             if (!isNaN(amount)) {
                 bouquets.push({ bouquete: name, amount: amount });
             }
@@ -49,8 +55,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     const totalBeforeDiscount = requestDataServer.total_price_before_discount;
                     const totalAfterDiscount = requestDataServer.total_price;
                     const promocodeApplied = requestDataServer.promocode_applied;
-                    console.log(totalAfterDiscount);
-                    console.log(totalBeforeDiscount);
+
+                    // Создание новых элементов для отображения информации
+                    const h3Total = document.createElement("h3");
+                    h3Total.innerHTML = `Итого: ${totalAfterDiscount} руб`;
+                    cartItems.appendChild(h3Total);
+
+                    const h3Discount = document.createElement("h3");
+                    h3Discount.innerHTML = `Цена до скидки: ${totalBeforeDiscount} руб`;
+                    h3Discount.style.textDecoration = "line-through";
+                    cartItems.appendChild(h3Discount);
 
                 })
                 .catch(error => {
