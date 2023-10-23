@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const url = 'https://plimrecords.com:8443/shop/calculate-cart-total';
         const requestData = {
             items: bouquets,
-            tgid: '324123',
+            tgid: '463863956',
             promocode: promocode,
         };
         // Не трогать, проверка JSON
