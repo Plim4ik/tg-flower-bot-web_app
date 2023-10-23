@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const promoInput = document.getElementById('promo');
         const promocode = promoInput.value;
 
+        if (promocode.trim() === '') {
+            alert('Поле промокода не должно быть пустым.');
+            return; // Прекратить выполнение функции
+        }
+
         // Получение информации о букетах из скрытых полей формы
         const itemsInfo = document.querySelector("#items-info");
         const bouquetInputs = itemsInfo.querySelectorAll("input[name$='[name]']");
@@ -26,8 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
             tgid: '463863956',
             promocode: promocode,
         };
-        // Не трогать, проверка JSON
-        console.log(requestData);
 
         fetch(url, {
             method: 'POST',
@@ -41,6 +44,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(data => {
                     const requestDataServer = data;
                     console.log(requestDataServer);
+
+                    // Обновление информации на веб-странице
+                    const totalBeforeDiscount = requestDataServer.total_price_before_discount;
+                    const totalAfterDiscount = requestDataServer.total_price;
+                    const promocodeApplied = requestDataServer.promocode_applied;
+                    console.log(totalAfterDiscount);
+                    console.log(totalBeforeDiscount);
+
                 })
                 .catch(error => {
                     console.log('Ошибка при обработке ответа:', error);
