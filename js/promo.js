@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const url = 'https://plimrecords.com:8443/shop/calculate-cart-total';
         const requestData = {
             items: bouquets,
-            tgid: '463863956',
+            tgid: 463863956,
             promocode: promocode,
         };
 
@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     const totalAfterDiscount = requestDataServer.total_price;
                     const promocodeApplied = requestDataServer.promocode_applied;
 
-                    // Создание новых элементов для отображения информации
                     const h3Total = document.createElement("h3");
                     h3Total.innerHTML = `Итого: ${totalAfterDiscount} руб`;
                     cartItems.appendChild(h3Total);
@@ -65,6 +64,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     h3Discount.innerHTML = `Цена до скидки: ${totalBeforeDiscount} руб`;
                     h3Discount.style.textDecoration = "line-through";
                     cartItems.appendChild(h3Discount);
+
+                    // Добавляем уведомление о промокоде
+                    const promoNotification = document.createElement("p");
+                    if (promocodeApplied) {
+                        promoNotification.innerHTML = "Промокод применен.";
+                    } else {
+                        promoNotification.innerHTML = "Промокод недействителен или не существует.";
+                    }
+                    cartItems.appendChild(promoNotification);
 
                 })
                 .catch(error => {
