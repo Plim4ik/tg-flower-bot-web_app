@@ -1,42 +1,46 @@
 document.addEventListener('DOMContentLoaded', function () {
     const applyPromoButton = document.getElementById('applyPromoButton');
-
+    
     applyPromoButton.addEventListener('click', function () {
         // Получение значения промокода из поля ввода
         const promoInput = document.getElementById('promo');
         const promocode = promoInput.value;
 
+        // Получение информации о букетах из скрытых полей формы
+        const itemsInfo = document.querySelector("#items-info");
+        const bouquetInputs = itemsInfo.querySelectorAll("input[name^='items']");
+        const bouquets = [];
+
+        bouquetInputs.forEach(input => {
+            const name = input.value;
+            const amountInput = itemsInfo.querySelector(`input[name='${input.name.replace('name', 'no')}']`);
+            const amount = amountInput.value;
+            bouquets.push({ bouquet: name, amount: parseInt(amount) });
+        });
+
         // Пример отправки POST-запроса
         const url = 'http://212.109.194.133:8888/shop/calculate-cart-total';
         const requestData = {
-            items: [
-                { bouquete: 'Васаби', amount: 2 },
-                { bouquete: 'Вуаяж', amount: 1 },
-            ],
+            items: bouquets,
             tgid: '463863956',
-            promocode: promocode, 
+            promocode: promocode,
         };
 
+        // Отправка запроса с данными
         fetch(url, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
             body: JSON.stringify(requestData),
-        })
-        .then(response => {
-            if (response.status === 200) {
-                return response.json();
-            } else {
-                throw new Error(`Ошибка: ${response.status}`);
+            headers: {
+                'Content-Type': 'application/json'
             }
         })
-        .then(result => {
-            const totalPrice = result.total_price;
-            console.log(`Общая стоимость: ${totalPrice}`);
+        .then(response => response.json())
+        .then(data => {
+            // Обработка ответа от сервера
+            console.log(data);
         })
         .catch(error => {
-            console.error(error);
+            console.error('Ошибка при отправке запроса:', error);
         });
     });
 });
