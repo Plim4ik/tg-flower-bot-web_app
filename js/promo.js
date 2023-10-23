@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Пример отправки POST-запроса
         const url = 'https://plimrecords.com:8443/shop/calculate-cart-total';
         const requestData = {
             items: bouquets,
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Не трогать, проверка JSON
         console.log(requestData);
 
-        // Отправка запроса с данными
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(requestData),
@@ -40,8 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => response.json())
         .then(data => {
-            // Обработка ответа от сервера
-            console.log(data);
+            const requestDataServer = data;
+
+            console.log(requestDataServer);
         })
         .catch(error => {
             console.error('Ошибка при отправке запроса:', error);
