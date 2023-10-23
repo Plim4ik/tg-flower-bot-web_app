@@ -2,22 +2,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const applyPromoButton = document.getElementById('applyPromoButton');
 
     applyPromoButton.addEventListener('click', function () {
-        // Получение значения промокода из поля ввода
+
         const promoInput = document.getElementById('promo');
         const promocode = promoInput.value;
 
         if (promocode.trim() === '') {
             alert('Поле промокода не должно быть пустым.');
-            return; // Прекратить выполнение функции
+            return; 
         }
 
-        // Удаление существующих элементов h3
         const cartItems = document.querySelector("#cart-items");
         cartItems.querySelectorAll("h3").forEach(function (element) {
             element.remove();
         });
 
-        // Получение информации о букетах из скрытых полей формы
+
         const itemsInfo = document.querySelector("#items-info");
         const bouquetInputs = itemsInfo.querySelectorAll("input[name$='[name]']");
         const noInputs = itemsInfo.querySelectorAll("input[name$='[no]']");
@@ -65,15 +64,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     h3Discount.style.textDecoration = "line-through";
                     cartItems.appendChild(h3Discount);
 
-                    // Добавляем уведомление о промокоде
-                    const promoNotification = document.createElement("p");
                     if (promocodeApplied) {
-                        promoNotification.innerHTML = "Промокод применен.";
+                        alert("Промокод применен.");
                     } else {
-                        promoNotification.innerHTML = "Промокод недействителен или не существует.";
+                        alert("Промокод недействителен или не существует.");
                     }
-                    cartItems.appendChild(promoNotification);
-
                 })
                 .catch(error => {
                     console.log('Ошибка при обработке ответа:', error);
