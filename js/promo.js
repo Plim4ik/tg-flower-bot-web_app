@@ -36,11 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Content-Type': 'application/json'
             }
         })
-        .then(response => response.json())
-        .then(data => {
-            const requestDataServer = data;
-
-            console.log(requestDataServer);
+        .then(response => {
+            return response.json()
+                .then(data => {
+                    const requestDataServer = data;
+                    console.log(requestDataServer);
+                })
+                .catch(error => {
+                    console.log('Ошибка при обработке ответа:', error);
+                });
         })
         .catch(error => {
             console.error('Ошибка при отправке запроса:', error);
